@@ -96,7 +96,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(join(__dirname, '../dist')));
+// app.use(express.static(join(__dirname, '../dist')));
 
 // MongoDB Connection
 const mongoURI = process.env.MONGODB_URI;
@@ -166,9 +166,9 @@ app.post('/api/chat', (req, res) => {
 });
 
 // Fallback to frontend SPA
-app.get('*', (req, res) => {
-  res.sendFile(join(__dirname, '../dist/index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(join(__dirname, '../dist/index.html'));
+// });
 
 // Start server
 app.listen(PORT, () => {
